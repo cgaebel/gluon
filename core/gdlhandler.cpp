@@ -47,7 +47,7 @@ GDLHandler::instantiateObject( const QString& className )
 }
 
 GluonObject *
-GDLHandler::createObject( QStringList objectStringList, QObject* parent )
+GDLHandler::createObject( const QStringList& objectStringList, QObject* parent )
 {
     DEBUG_BLOCK
     GluonObject* createdObject = 0;
@@ -74,7 +74,7 @@ GDLHandler::createObject( QStringList objectStringList, QObject* parent )
                     if( item.startsWith( '{' ) )
                     {
                         // Items are parented automatically - see case 0 above
-                        QList<GluonObject*> childList = parseGDL( item, createdObject );
+                        parseGDL( item, createdObject );
                     }
                     else
                     {

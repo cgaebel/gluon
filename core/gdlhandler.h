@@ -164,7 +164,7 @@ namespace GluonCore
             Q_DISABLE_COPY( GDLHandler );
 
             GluonObject* instantiateObject( const QString& className );
-            GluonObject* createObject( QStringList objectStringList, QObject* parent );
+            GluonObject* createObject( const QStringList& objectStringList, QObject* parent );
             /**
              * Returns a list of QStringLists, where each QStringList is:
              * Index 0: The type of the object
