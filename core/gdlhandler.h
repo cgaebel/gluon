@@ -147,14 +147,14 @@ namespace GluonCore
              * @param   parent      The QObject you wish the objects to be parented to
              * @return  A list of generated GluonObject instances
              */
-            QList<GluonObject*> parseGDL( const QString parseThis, QObject* parent );
+            QList<GluonObject*> parseGDL( const QString& parseThis, QObject* parent );
 
             /**
              * Serialize a list of GluonObject instances into a GDL representation
              * @param   serializeThis   The list of GluonObject instances you wish to serialize
              * @return  The serialized objects
              */
-            QString serializeGDL( QList<const GluonObject*> serializeThis );
+            QString serializeGDL( const QList<const GluonObject*>& serializeThis );
 
         private:
             friend class Singleton<GDLHandler>;
@@ -163,7 +163,7 @@ namespace GluonCore
             virtual ~GDLHandler();
             Q_DISABLE_COPY( GDLHandler );
 
-            GluonObject* instantiateObject( QString className );
+            GluonObject* instantiateObject( const QString& className );
             GluonObject* createObject( QStringList objectStringList, QObject* parent );
             /**
              * Returns a list of QStringLists, where each QStringList is:
@@ -172,7 +172,7 @@ namespace GluonCore
              * Following indices: All the values in the order of definition, alternating between property names and values (in that order)
              * If any value begins with {, it is a new object
              */
-            QList<QStringList> tokenizeObject( QString objectString );
+            QList<QStringList> tokenizeObject( const QString& objectString );
     };
 }
 

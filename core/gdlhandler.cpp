@@ -37,7 +37,7 @@ GDLHandler::~GDLHandler()
 }
 
 GluonObject *
-GDLHandler::instantiateObject( QString className )
+GDLHandler::instantiateObject( const QString& className )
 {
     GluonObject* newObject = GluonObjectFactory::instance()->instantiateObjectByName( className );
     if( !newObject )
@@ -95,7 +95,7 @@ GDLHandler::createObject( QStringList objectStringList, QObject* parent )
 }
 
 QList<QStringList>
-GDLHandler::tokenizeObject( QString objectString )
+GDLHandler::tokenizeObject( const QString& objectString )
 {
     QList<QStringList> tokenizedObject;
 
@@ -327,7 +327,7 @@ GDLHandler::tokenizeObject( QString objectString )
 }
 
 QList<GluonObject*>
-GDLHandler::parseGDL( const QString parseThis, QObject* parent )
+GDLHandler::parseGDL( const QString& parseThis, QObject* parent )
 {
     QList<GluonObject*> thisObjectList;
 
@@ -344,7 +344,7 @@ GDLHandler::parseGDL( const QString parseThis, QObject* parent )
 }
 
 QString
-GDLHandler::serializeGDL( QList<const GluonObject*> serializeThis )
+GDLHandler::serializeGDL( const QList<const GluonObject*>& serializeThis )
 {
     QString serializedData;
 
