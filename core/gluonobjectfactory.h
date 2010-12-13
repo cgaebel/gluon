@@ -156,13 +156,12 @@ namespace GluonCore
  * A convenience class used for object registration, which should not be used directly
  */
 template<class T>
-class GluonObjectRegistration
+struct GluonObjectRegistration
 {
-    public:
-        GluonObjectRegistration()
-        {
-            GluonCore::GluonObjectFactory::instance()->registerObjectType<T>();
-        }
+    GluonObjectRegistration()
+    {
+        GluonCore::GluonObjectFactory::instance()->registerObjectType<T>();
+    }
 };
 
 /**
