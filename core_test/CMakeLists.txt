@@ -19,8 +19,9 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/core)
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
 set(GluonTest_SRCS
-    sampletest.cpp
     main.cpp
+    comparison.cpp
+    GDLHandler.cpp
 )
 
 set(GluonTest_HDRS

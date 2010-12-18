@@ -96,11 +96,11 @@ namespace GluonCore
      * object in the hierarchy. An example of this might be:
      *
      * \verbatim
-    { GluonObject(AnotherObject)
-    reference GluonObject(AnObject.AChildObject)
+    { GluonCore::GluonObject(AnotherObject)
+    reference GluonCore::GluonObject(AnObject/AChildObject)
     }
-    { GluonObject(AnObject)
-    { GluonObject(AChildObject)
+    { GluonCore::GluonObject(AnObject)
+    { GluonCore::GluonObject(AChildObject)
     }
     }
     \endverbatim
