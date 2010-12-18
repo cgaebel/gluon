@@ -4,6 +4,7 @@
 #include <QtTest/QTest>
 
 #include "../core/gluonobject.h"
+#include "../core/gdlhandler.h"
 
 class TestGluonCore : public QObject
 {
@@ -27,7 +28,7 @@ private:
     // Returns true if the passed GDL has (parsed -> serialized -> parsed) == parsed
     static bool ensure_reversible(const QString& gdl)
     {
-        GDLHandler* gh = GDLHandler::instance();
+        GluonCore::GDLHandler* gh = GluonCore::GDLHandler::instance();
 
         QList<GluonCore::GluonObject*> parsed = gh->parseGDL(gdl, NULL);
 
@@ -37,7 +38,8 @@ private:
     }
 
     private slots:
-    void basicSerialization();
+    void doxygenSample();
+    void invadersSample();
 };
 
 #endif
